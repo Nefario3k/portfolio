@@ -1,4 +1,5 @@
 AOS.init();
+emailjs.init('uwQeIceUW_-hcWoVr');
 /*==================== MENU SHOW Y HIDDEN ====================*/
 const navMenu = document.getElementById('nav-menu'),
     navToggle = document.getElementById('nav-toggle'),
@@ -244,4 +245,30 @@ darkModeQuery.addEventListener("change", (event) => {
         document.body.classList.toggle(darkTheme)
         themeButton.classList.toggle(iconTheme)
     }
+});
+
+/*==================== CONTACT FORM ====================*/
+document.getElementById("contactForm").addEventListener("submit", function (event) {
+    event.preventDefault()
+    var name = document.getElementById("contactName").value;
+    var email = document.getElementById("contactEmail").value;
+    var project = document.getElementById("contactProject").value;
+    var message = document.getElementById("contactMessage").value;
+
+    // Submit the data to an email address
+    // You can use a service like EmailJS to send the email
+    // Replace the service ID, template ID, and user ID with your own values
+    emailjs.send("service_rl5myhp", "template_wfoq7r1", {
+        to_name: "Davies Okpeta",
+        from_name: name,
+        reply_to: email,
+        subject: project,
+        message: message
+    }, "uwQeIceUW_-hcWoVr");
+
+    // Clear the input fields
+    document.getElementById("contactName").value = "";
+    document.getElementById("contactEmail").value = "";
+    document.getElementById("contactProject").value = "";
+    document.getElementById("contactMessage").value = "";
 });

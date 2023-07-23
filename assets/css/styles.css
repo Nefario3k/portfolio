@@ -57,6 +57,10 @@
   --z-modal: 1000;
 }
 
+textarea {
+  resize: none;
+}
+
 /* Font size for large devices */
 @media screen and (min-width: 968px) {
   :root {
@@ -445,7 +449,10 @@ button {
 /*==================== ABOUT ====================*/
 
 .about__img {
-  width: 200px;
+  width: 100%;
+  max-width: 350px;
+  object-fit: cover;
+  object-position: top center;
   border-radius: .5rem;
   justify-self: center;
   align-self: center;
@@ -820,6 +827,8 @@ button {
   border-radius: .5rem;
   overflow-y: auto;
   overflow-x: hidden;
+  display: grid;
+  place-items: center;
 }
 
 .portfolio__content-img-container::-webkit-scrollbar {
@@ -859,6 +868,13 @@ button {
 .portfolio__title {
   font-size: var(--h3-font-size);
   margin-bottom: var(--mb-0-5);
+}
+
+.portfolio__title .title {
+  color: var(--first-color);
+  /* text-decoration: underline; */
+  max-width: max-content;
+  display: inline-block;
 }
 
 .portfolio__description {
