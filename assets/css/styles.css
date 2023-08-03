@@ -857,9 +857,11 @@ button {
 
 .portfolio__img {
   width: 100%;
-  object-fit: cover;
+  height: 100%;
+  object-fit: contain;
+
   object-position: top center;
-  height: max-content;
+  /* height: max-content; */
   border-radius: .5rem;
   justify-self: center;
   align-self: center;
@@ -1383,6 +1385,7 @@ button {
 
   .portfolio__img {
     width: 100%;
+    object-fit: cover;
   }
 
   .portfolio__content {
